@@ -1,7 +1,3 @@
----
-typora-copy-images-to: ./
----
-
 git 使用
 ===
 # git三棵树的关系
@@ -170,7 +166,7 @@ pb  git://github.com/paulboone/ticgit.git
 
 - 示例2
 
-![1540778446820](/home/bitohw02/Dropbox/12_git使用指南/1540778446820.png)
+![1540778446820](./1540778446820.png)
 
 
 
