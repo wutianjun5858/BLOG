@@ -299,11 +299,10 @@ git push origin test_branch
 - 情况二: 当前的master是对应test分支的master的又有了更新
 
 
-
-
 [参考地址](https://backlog.com/git-tutorial/cn/stepup/stepup1_4.html)
 
 ## 问题
+
 - you need to resolve your current index first。因为产生了冲突。故需要回退到合并前。(无论是merge还是rebase)
 解决方案如下：
   ```c
