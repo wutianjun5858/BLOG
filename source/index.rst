@@ -11,6 +11,7 @@ Welcome to Jonathan.Wu's Blog's documentation!
    :caption: Contents:
 
    great_project
+   如何写一个makefile文件
 
 
 
