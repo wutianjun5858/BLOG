@@ -1,9 +1,13 @@
+---
+typora-copy-images-to: ./
+---
+
 git 使用
 ===
 # git三棵树的关系
-![图片](https://note.youdao.com/yws/public/resource/169bc171c9b266658562f829b87ace4f/xmlnote/96470D0E615841CE84F34806410604B8/13396)
+![1540782156414](1540782156414.png)
 
-![图片](https://note.youdao.com/yws/public/resource/169bc171c9b266658562f829b87ace4f/xmlnote/94FD40D4C6A04FEF9AA7B4E839F40EED/13397)
+![1540782189687](1540782189687.png)
 
 # 设置git的输出的编码
 - gbk
