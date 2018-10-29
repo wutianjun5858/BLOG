@@ -12,6 +12,7 @@ Welcome to Jonathan.Wu's Blog's documentation!
 
    great_project
    如何写一个makefile文件
+   git/git 使用
 
 
 
