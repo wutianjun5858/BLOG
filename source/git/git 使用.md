@@ -1,30 +1,46 @@
-# git 使用
+---
+typora-copy-images-to: ./
+---
 
-## git三棵树的关系
-![1540782156414](1540782156414.png)
+git 使用
+===
+## wtj git 使用流程
 
-![1540782189687](1540782189687.png)
+1. git clone
+2. git add .
+3. git commit -m "日志"
+4. git push origin local_branch
+5. git fetch -all
+6. git diff --stat  <branch>// 简略的报告
+7. git diff local_branch-name origin/branch-name // 查看当前分支和远程分支的区别
+8. gitg 查看当前所有分支的日志
 
 
 
-## 设置git的输出的编码
+# git三棵树的关系
+
+![图片](https://note.youdao.com/yws/public/resource/169bc171c9b266658562f829b87ace4f/xmlnote/96470D0E615841CE84F34806410604B8/13396)
+
+![图片](https://note.youdao.com/yws/public/resource/169bc171c9b266658562f829b87ace4f/xmlnote/94FD40D4C6A04FEF9AA7B4E839F40EED/13397)
+
+# 设置git的输出的编码
 - gbk
 `git config --global i18n.logoutputencoding gbk`
 - utf-8
 `git config --global i18n.logoutputencoding utf-8`
 
-## 添加的时候出现CRLF的问题或者LF的问题
+# 添加的时候出现CRLF的问题或者LF的问题
 - 用`提交检出均不转换`也就是下面的代码
 ```c
 git config --global core.autocrlf false
 ```
 
-## 建库
+# 建库
 ```c
 git init
 ```
 
-## 查看和修改git邮件和用户名
+# 查看和修改git邮件和用户名
 - 查看用户名和邮件
 ```
 git config user.name
@@ -36,7 +52,7 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
 
-## 将工作区提交到暂存区
+# 将工作区提交到暂存区
 - 这个是把新添加的以及修改过的都提交
 ```c
 git add .
@@ -48,62 +64,62 @@ git add -u
 
 
 
-### 修改commit的信息
+## 修改commit的信息
 
 [参考地址](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2)
 
-## 将暂存区提交到本地仓库
+# 将暂存区提交到本地仓库
 
 ```
 git commit -m "提交的log,方便自己区分"
 ```
 
-## 恢复到某个版本
+# 恢复到某个版本
 ```c
 git reset --hard 哈希号(只要前面的5个就可以了)
 ```
 
-## 如果恢复到某个版本错误, 想恢复到原来的
+# 如果恢复到某个版本错误, 想恢复到原来的
 ```c
 git reflog之后git reset --hard 哈希号(只要前面的5个就可以了), 这就是所谓的时空穿梭
 ```
 
-## 查看状态(没有提交到暂存区的是红色, 没有提交到本地仓库的是绿色)
+# 查看状态(没有提交到暂存区的是红色, 没有提交到本地仓库的是绿色)
 ```c
 git status
 ```
 
-## 查看log
+# 查看log
 ```c
 git log
 ```
 
-## 撤销工作区的某一个文件的更改(参照暂存区进行修改, 跟暂存区不一致就变成跟暂存区一样的, 甚至没有这个文件也能还原)
+# 撤销工作区的某一个文件的更改(参照暂存区进行修改, 跟暂存区不一致就变成跟暂存区一样的, 甚至没有这个文件也能还原)
 ```c
 git checkout main.c
 ```
 
-## 撤销工作区的所有的更改
+# 撤销工作区的所有的更改
 ```c
 git checkout .
 ```
 
-## 撤销暂存区的某一个文件的更改(参照本地仓库进行修改, 跟本地仓库不一致就变成跟本地仓库一样)
+# 撤销暂存区的某一个文件的更改(参照本地仓库进行修改, 跟本地仓库不一致就变成跟本地仓库一样)
 ```c
 git reset HEAD(哈希号的前5位) main.c
 ```
 
-## 查看远程branch
+# 查看远程branch
 ```c
 git branch -a
 ```
 
-## 查看本地branch
+# 查看本地branch
 ```c
 git branch
 ```
 
-## 创建分支并切换到分支test
+# 创建分支并切换到分支test
 - 创建分支test
 ```c
 git branch test
@@ -117,19 +133,19 @@ git checkout test
 git checkout master
 ```
 
-## 删除本地分支
+# 删除本地分支
 - 删除本地branch test
 ```
 git branch -d test
 ```
 
-## 远程仓库的使用
-### 查看当前的远程仓库
+# 远程仓库的使用
+## 查看当前的远程仓库
 ```c
 git remote
 ```
 
-### 显示克隆地址
+## 显示克隆地址
 ```c
 git remote -v
 ```
@@ -152,7 +168,7 @@ koke      git://github.com/koke/grit.git
 origin    git@github.com:mojombo/grit.git
 ```
 
-### 添加远程仓库
+## 添加远程仓库
 ```c
 git remote add [shortname] [url]
 ```
@@ -168,7 +184,7 @@ pb  git://github.com/paulboone/ticgit.git
 
 - 示例2
 
-![1540778446820](./1540778446820.png)
+![1540778446820](/home/bitohw02/Dropbox/12_git使用指南/1540778446820.png)
 
 
 
@@ -186,7 +202,7 @@ From git://github.com/paulboone/ticgit
 ```
 现在, Paul的主干分支(master)已经完全可以在本地访问了, 对应的名字是`pb/master`, 我们可以将它合并到自己的某个分支, 或者切换到这个分支了
 
-### 从远程仓库抓取数据
+## 从远程仓库抓取数据
 ```c
 git fetch [remote-name]
 ```
@@ -196,7 +212,7 @@ git fetch [remote-name]
 
 如果设置了某个分支用于跟踪某个远端仓库的分支, 可以使用`git pull`命令自动抓取数据下来, 然后将远端分支自动合并到本地仓库中当前分支. 在日常工作中, 我们经常这么用, 很快很方便. 实际上, 默认情况下`git clone`命令本质上就是自动创建了本地的master分支用于跟踪远程仓库中的`master`分支(假设远程仓库中确实有master分支). 所以一般我们运行`git pull`, 目的都是要从原始克隆的远端仓库中抓取数据后, 合并到工作目录中的当前分支.
 
-### 推送数据到远程仓库
+## 推送数据到远程仓库
 - 推送当前分支到远程仓库
 ```c
 git push [remote-name] [branch-name]
@@ -207,7 +223,7 @@ git push origin master
 ```
 **注意:**只有在所克隆的服务器上有`写权限`, 或者同一时刻没有其他人在推数据, 这条命令才能如期完成. 如果在我们推数据前, 已经有其他人推送了若干更新, 那么我们的推送操作就会被驳回. `我们必须先把他们的更新抓取到本地, 合并到自己的项目中`, 然后才可以再次推送. 
 
-### 查看远程仓库信息
+## 查看远程仓库信息
 - 命令
 ```c
 git remote show [remote-name]
@@ -224,8 +240,8 @@ $ git remote show origin
     ticgit
 ```
 
-### 远程仓库的删除和重命名
-#### 重命名
+## 远程仓库的删除和重命名
+### 重命名
 ```c
 git remote rename
 ```
@@ -238,7 +254,7 @@ paul
 ```
 
 注意, 对远程仓库的重命名, 也会使对应的分支名称发生变化, 原来的`pb/master`分支现在变成了`paul/master`
-#### 删除
+### 删除
 ```c
 git remote mv
 ```
@@ -249,13 +265,13 @@ $ git remote
 origin
 ```
 
-### 删除远程分支
+## 删除远程分支
 ```c
 git branch -r -d origin/branch-name
 git push origin :branch-name
 ```
 
-### 创建远程分支
+## 创建远程分支
 1. 在本地创建一个本地分支
 ```c
 git branch test_branch
@@ -266,27 +282,26 @@ git branch test_branch
 git push origin test_branch
 ```
 
-### 直接git clone下来的是只有master分支需要切换到远程分支的操作
+## 直接git clone下来的是只有master分支需要切换到远程分支的操作
 1. `git branch -a` 这个查看远程分支, 会看到`remotes/origin/test`(这个是泛指的, 不是具体的)
 2. `git checkout -b test remotes/origin/test`,前面的test是在本地新建的, 后面的remotes/origin/test是远端的, 就是把远端的拉到本地, 注意名字要对应, 都是test(泛指)
 3. `git checkout test`就可以了
 
-### 拉取远程分支到本地
+## 拉取远程分支到本地
 - `git pull origin test:wtj`(git pull <远程主机名> <远程分支名>:<本地分支名>)
 
-## 标签的使用
+# 标签的使用
 
 [参考地址](https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8)
 
-## 分支对应的master和当前的master不一样
+# 分支对应的master和当前的master不一样
 
-## 合并分支
-
-### 两种方式
+# 合并分支
+## 两种方式
 - merge
 - rebase
 
-### merge
+## merge
 使用merge可以合并多个历史记录的流程.
 - 情况一: 当前的master就是test分支对应的master
 直接是使用merge就可以了
@@ -294,18 +309,85 @@ git push origin test_branch
 - 情况二: 当前的master是对应test分支的master的又有了更新
 这种情况下, 要吧master分支的修改内容和bugfix分支的修改内容汇合起来, 因此, 合并两个修改会生成一个提交, 这时, master分支的HEAD会移动到该提交上, 执行合并时, 如果设定了non fast-forward 选项, 即使在能够fast-forward合并的情况下也会生成新的提交并合并,执行Non fast-forward后, 分支会维持原装. 那么要查明这个分支里的操作也很容易
 
-### rebase
+## rebase
 - 情况一:当前的master就是test分支对应的master
-
 - 情况二: 当前的master是对应test分支的master的又有了更新
-
 
 [参考地址](https://backlog.com/git-tutorial/cn/stepup/stepup1_4.html)
 
-## 问题
+## 合并多个commit
+
+[参考地址](https://www.jianshu.com/p/964de879904a)
+
+[参考地址](https://juejin.im/entry/5ae9706d51882567327809d0)
+
+
+
+## 远端仓库覆盖本地仓库
+
+```
+首先，git fetch --all 
+
+    取回远程库的所有修改；
+
+然后，git reset --hard origin/master
+
+    指向远程库origin的master分支
+```
+
+### 放弃当前分支的所有修改
+
+```
+git checkout . && git clean -xdf // git clean -xdf 是把.gitignore里面忽略的文件全部删除
+```
+
+
+
+## 拉取远端的所有分支, 如果本地分支修改了, 则保留本地的
+
+```
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull --all
+```
+
+
+
+## 小技巧
+
+[参考地址](https://www.kancloud.cn/leviio/git/734963)
+
+[参考地址](https://www.jianshu.com/p/319dbf150c2d)
+
+## 当前的分支比远端的分支要晚就不能提交的解决方法
+
+```
+git fetch --all
+gitg 查看远端是否是当前的分支
+git merge branch-name
+git mergetool // 如果有冲突, 就使用这一句
+git add .
+git commit -m "log"
+git push origin local-branch-name
+```
+
+## 多人协作的问题
+
+- 不要使用git pull , 先使用`git fetch --all`, 然后使用`git merge`, 当然也可以使用`git merge tool`进行合并
+
+## git mergetool 总是会产生*.orig的备份文件
+
+```
+git config --global mergetool.keepBackup false // 不产生备份文件
+```
+
+
+
+# 问题
 
 - you need to resolve your current index first。因为产生了冲突。故需要回退到合并前。(无论是merge还是rebase)
-解决方案如下：
+  解决方案如下：
+
   ```c
   git reset --merge
   ```
@@ -319,9 +401,7 @@ git push origin test_branch
   或者git config --global http.proxy 127.0.0.1:1080, 这个不推荐
   ```
 
-
-
-## 待整理的
+# 待整理的
 ```c
 git 换行符LF与CRLF转换问题
 一、背景
@@ -360,7 +440,7 @@ Line separator (for new lines) ，选择：Unix and OS X (\n)
 View->Line Endings，选Unix，保存；
 ```
 
-## 待整理2
+# 待整理2
 ```
 使用github不是很久，把一些遇到的问题记录下来。 
 关于git安装以及远程连接仓库相信网上有很多资料 
@@ -443,14 +523,14 @@ git remote –v 查看远程库的详细信息
 git push origin master Git会把master分支推送到远程库对应的远程分支上
 ```
 
-## 忽略文件
+# 忽略文件
 vim .gitignore
 然后输入需要忽略的文件后缀或者完整的文件
 ```
 *.db文件
 ```
 
-## git diff
+# git diff
 ## 工作区 vs 暂存区
 ```c
 git diff <filename>// filename添加了那么就是指定的文件比较
@@ -461,7 +541,7 @@ git diff <filename>// filename添加了那么就是指定的文件比较
 git diff <branch> <filename>
 ```
 
-### 暂存区 vs Git仓库
+## 暂存区 vs Git仓库
 ```c
 git diff --cached <filename>
 ```
@@ -471,17 +551,17 @@ git diff --cached <filename>
 git diff --cached <commit> <filename> //<commit>可以看git log来获取, 只要前面几个字节
 ```
 
-### 工作区 vs git仓库
+## 工作区 vs git仓库
 ```c
 git diff <commit> <filename> // 如果<commit>=HEAD 那么查看工作区和最新commit到仓库的版本内容比较
 ```
 
-### Git仓库 vs Git仓库
+## Git仓库 vs Git仓库
 ```c
 git diff <commit> <commit>// 就是两个指定的commit的版本进行比较
 ```
 
-### 扩展
+## 扩展
 以上命令可以不指定`<filename>`, 则对全部文件操作
 以上命令涉及和Git仓库对比的, 均可以指定commit的版本
 - `HEAD`最近一次commit
